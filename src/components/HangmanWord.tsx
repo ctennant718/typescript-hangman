@@ -1,12 +1,15 @@
 import React from "react";
 
-function HangmanWord() {
-  const word = "test";
-  const guessedLetters = ["t", "e", "g"];
+type HangmanWordProps = {
+  guessedLetters: string[]
+  wordToGuess: string
+}
+
+function HangmanWord({guessedLetters, wordToGuess}: HangmanWordProps) {
   return (
     <>
       <div className="word-wrapper">
-        {word.split("").map((letter, index) => (
+        {wordToGuess.split("").map((letter, index) => (
           <span className="word-underline" key={index}>
             <span
               style={{
