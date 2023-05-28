@@ -1,4 +1,5 @@
 import "./styles/components.css";
+import { refreshPage } from "../utils";
 
 const KEYS = [
   "a",
@@ -62,6 +63,11 @@ function Keyboard({
               </button>
             );
           })}
+        </div>
+        <div className="play-again-button-wrapper">
+          <button onClick={refreshPage} className="play-again-button">
+            Play Again
+          </button>
         </div>
       </div>
     </>

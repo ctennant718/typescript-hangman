@@ -1,3 +1,5 @@
+/* hangman drawing styles */
+
 .drawing-wrapper {
   position: relative;
 }
@@ -94,10 +96,12 @@
   background: hsl(0, 0%, 0%);
 }
 
+/* hangman word styles */
+
 .word-wrapper {
   display: flex;
   gap: 0.25em;
-  font-size: 6rem;
+  font-size: clamp(4rem, 10vw, 6rem);
   font-weight: bold;
   text-transform: uppercase;
   font-family: monospace;
@@ -110,6 +114,8 @@
 .word-letter {
   visibility: hidden;
 }
+
+/* keyboard styles */
 
 .keyboard-wrapper {
   align-self: stretch;
@@ -138,7 +144,7 @@
 }
 
 .keyboard-button:hover,
-keyboard-button:focus {
+.keyboard-button:focus {
   background-color: hsl(0, 0%, 100%);
 }
 
@@ -154,4 +160,29 @@ keyboard-button:focus {
 .keyboard-button-inactive:hover:disabled,
 .keyboard-button-inactive:focus:disabled {
   background-color: hsl(263, 44%, 79%);
+}
+
+.play-again-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.play-again-button {
+  width: 100%;
+  border: 3px solid hsl(0, 0%, 0%);
+  background: none;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  border-radius: 15%;
+  padding: 0.5em;
+  margin-inline: 5em;
+  margin-block-end: 1em;
+}
+
+.play-again-button:hover,
+.play-again-button:focus {
+  background-color: hsl(0, 0%, 100%);
 }
