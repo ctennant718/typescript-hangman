@@ -65,8 +65,9 @@ function App() {
     <>
       <div className={"hangman-wrapper"}>
         <div className={"outcome-text"}>
-          {isWinner && "You won! Press enter to try again."}
-          {isLoser && "Oh no! Beter luck next time! Press enter to try again."}
+          {isWinner && "You won! Press the play again button."}
+          {isLoser &&
+            "Oh no! Beter luck next time! Press the play again button."}
         </div>
         <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
         <HangmanWord
