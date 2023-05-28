@@ -85,7 +85,6 @@
   height: 400px;
   width: 10px;
   background: hsl(0, 0%, 0%);
-  /* divide the width of the bottom bar, and the width of this bar */
   margin-inline-start: 120px;
 }
 
@@ -114,12 +113,14 @@
 
 .keyboard-wrapper {
   align-self: stretch;
+  margin-block-start: 1.5em;
 }
 
 .keyboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   gap: 0.5em;
+  margin-block-end: 1.5em;
 }
 
 .keyboard-button {

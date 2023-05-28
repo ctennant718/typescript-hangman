@@ -13,6 +13,8 @@ body {
 }
 
 .outcome-text {
+  margin-block-start: 1.5em;
+  margin-block-end: 1em;
   font-size: 2rem;
   text-align: center;
 }
