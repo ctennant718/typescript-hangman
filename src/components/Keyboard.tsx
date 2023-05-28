@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/components.css";
 
 const KEYS = [
   "a",
@@ -29,13 +30,38 @@ const KEYS = [
   "z",
 ];
 
-function Keyboard() {
+type KeyboardProps = {
+  activeLetters: string[];
+  inactiveLetters: string[];
+  addGuessedLetter: (letter: string) => void;
+  disabled?: boolean;
+};
+
+function Keyboard({
+  activeLetters,
+  inactiveLetters,
+  addGuessedLetter,
+  disabled = false,
+}: KeyboardProps) {
   return (
     <>
       <div className="keyboard-wrapper">
         <div className="keyboard-grid">
           {KEYS.map((key) => {
-            return <button key={key} className="keyboard-button">{key}</button>;
+            const isActive = activeLetters.includes(key);
+            const isInactive = inactiveLetters.includes(key);
+            return (
+              <button
+                onClick={() => addGuessedLetter(key)}
+                key={key}
+                className={`keyboard-button keyboard-button-${
+                  isActive ? "active" : ""
+                } keyboard-button-${isInactive ? "inactive" : ""}`}
+                disabled={isInactive || isActive || disabled}
+              >
+                {key}
+              </button>
+            );
           })}
         </div>
       </div>
