@@ -38,9 +38,9 @@ function App() {
       e.preventDefault();
       addGuessedLetter(key);
     };
-    document.addEventListener("keypress", handler);
+    document.addEventListener("keydown", handler);
     return () => {
-      document.removeEventListener("keypress", handler);
+      document.removeEventListener("keydown", handler);
     };
   }, [addGuessedLetter, guessedLetters]);
 
@@ -54,10 +54,10 @@ function App() {
       setWordToGuess(getWord());
     };
 
-    document.addEventListener("keypress", handler);
+    document.addEventListener("keydown", handler);
 
     return () => {
-      document.removeEventListener("keypress", handler);
+      document.removeEventListener("keydown", handler);
     };
   }, []);
 
